@@ -1,12 +1,25 @@
-<!DOCTYPE html>
+<!-- Photography Item 8 -->
+          <div class="portfolio-item">
+            <img src="img8.jpg" alt="Photography 8" style="width:100%">
+          </div>
+          
+          <!-- Photography Item 9 -->
+          <div class="portfolio-item">
+            <img src="img9.jpg" alt="Photography 9" style="width:100%">
+          </div>
+          
+          <!-- Photography Item 10 -->
+          <div class="portfolio-item">
+            <img src="img10.jpg" alt="Photography 10" style="width:100%">
+          </div><!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/favicon.jpg" />
-  <title>Huong Nguyen</title>
-  <meta name="description" content="Huong Nguyen">
+  <title>Vy Nguyen</title>
+  <meta name="description" content="Vy Nguyen">
   <meta name="keywords" content="Name, skills and coding experiences" />
   <style>
     /* Basic Reset */
@@ -111,6 +124,24 @@
       margin-bottom: 25px;
       padding-bottom: 25px;
       border-bottom: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .writing-item-header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    
+    .writing-content {
+      flex: 1;
+    }
+    
+    .award-image {
+      max-width: 100px;
+      margin-left: 15px;
+      flex-shrink: 0;
     }
     
     .writing-item:last-child {
@@ -126,6 +157,14 @@
       margin-bottom: 15px;
       line-height: 1.8;
     }
+    
+    .award-note {
+      font-style: italic;
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+    
     
     .read-more {
       display: inline-block;
@@ -199,7 +238,7 @@
   <header class="header" role="banner" id="top">
     <div class="header__text">
       <h1 class="heading-primary">
-        <span>Huong Nguyen</span>
+        <span>Vy Nguyen</span>
       </h1>
     </div>
   </header>
@@ -218,35 +257,96 @@
         
         <!-- Writing Items -->
         <div class="writing-item">
-          <h4>The Silent Conversation</h4>
-          <div class="writing-excerpt">
-            <p>In the quiet moments between strangers, there exists an unspoken language—a dance of glances, postures, and microexpressions that communicate volumes without a single word exchanged...</p>
+          <div class="writing-item-header">
+            <div class="writing-content">
+              <h4>Why I Miss Where I Immigrated From</h4>
+              <p class="award-note">Honorable Mention - 2024 Scholastic Art & Writing Awards</p>
+            </div>
+            <img src="https://drive.google.com/uc?export=view&id=1Q9LkyA11LOo1DckJNjyXRgL2AkjeWQXT" alt="Scholastic Art & Writing Awards Honorable Mention" class="award-image">
           </div>
-          <a href="./writing/silent-conversation.html" class="read-more">Read more</a>
+          <div class="writing-excerpt">
+            <p>When I left, it was hard letting go of Saigon. At five years old, I couldn't bear to part with the remnants of Saigon's intellectualism, her vibrance and her beauty, along with everything my mom worked for, including our home nestled in District Phú Nhuận...</p>
+          </div>
+          <a href="https://drive.google.com/file/d/1Q9LkyA11LOo1DckJNjyXRgL2AkjeWQXT/view?usp=drive_link" class="read-more" target="_blank">Read more</a>
         </div>
         
         <div class="writing-item">
-          <h4>Echoes of Home</h4>
-          <div class="writing-excerpt">
-            <p>What defines the concept of home in an increasingly globalized world? This essay explores the threads that connect us to places, examining how memory and sensory experience create lasting impressions...</p>
+          <div class="writing-item-header">
+            <div class="writing-content">
+              <h4>Pouring Jazz & Little Saigon</h4>
+              <p class="award-note">Published in L.A. Times High School Insider</p>
+            </div>
           </div>
-          <a href="./writing/echoes-home.html" class="read-more">Read more</a>
+          <div class="writing-excerpt">
+            <p>My childhood sometimes feels like a blur. Partially because, when you're a kid, your memories collide into a haze, and partially because years of absorbing English makes the memory of me, an outspoken, eccentric Vietnamese child, seem the tiniest bit foreign. However, the one thing that always stuck out from my childhood in Vietnam is listening to musician Elvis Phuong.</p>
+          </div>
+          <a href="https://highschool.latimes.com/opinion/opinion-pouring-jazz-and-little-saigon/" class="read-more" target="_blank">Read more</a>
         </div>
         
         <div class="writing-item">
-          <h4>Between Worlds</h4>
-          <div class="writing-excerpt">
-            <p>A short story that follows the journey of Minh, a young Vietnamese-American navigating the complex intersection of cultural identities while searching for authentic connection...</p>
+          <div class="writing-item-header">
+            <div class="writing-content">
+              <h4>Where the Bougainvillea Once Bloomed</h4>
+            </div>
           </div>
-          <a href="./writing/between-worlds.html" class="read-more">Read more</a>
+          <div class="writing-excerpt">
+            <p>Where the bougainvillea once bloomed, is where you will find me.<br>
+With wistful, young eyes upwards and chubby fingers turning white in tight grips,<br>
+The petals waved hello as I climbed up the thin, metal swirls of the yard's fence...</p>
+          </div>
+          <a href="https://drive.google.com/file/d/1Dv0LCgZmXsaMuECx3bVOfFepI1Vy41en/view?usp=drive_link" class="read-more" target="_blank">Read more</a>
         </div>
         
         <div class="writing-item">
-          <h4>The Architecture of Memory</h4>
-          <div class="writing-excerpt">
-            <p>This reflective piece explores how physical spaces become repositories of personal history, and how the structures we inhabit shape our understanding of ourselves...</p>
+          <div class="writing-item-header">
+            <div class="writing-content">
+              <h4>Southeast Asian Beverages to Try This Spring Instead of Boba</h4>
+              <p class="award-note">Published in Baron News</p>
+            </div>
           </div>
-          <a href="./writing/architecture-memory.html" class="read-more">Read more</a>
+          <div class="writing-excerpt">
+            <p>On the numerous car rides in Orange County, I see empty Southeast Asian shops next to the crowded tea shops. What would it look like if we expanded our palates with drinks from other cultures, while supporting neglected small businesses?</p>
+          </div>
+          <a href="https://www.baronnews.com/2023/06/02/southeast-asian-beverages-to-try-this-spring-instead-of-boba/" class="read-more" target="_blank">Read more</a>
+        </div>
+        
+        <div class="writing-item">
+          <div class="writing-item-header">
+            <div class="writing-content">
+              <h4>The Healing Minority</h4>
+            </div>
+          </div>
+          <div class="writing-excerpt">
+            <p>As I write down those familiar names on the top of a fresh sheet of homework, I stare at it.<br>
+Nguyen, in America. Nguyễn, in Vietnam.<br>
+A name that was mispronounced and mistreated in North Carolina, and a name now that my Vietnamese-American friends in Little Saigon insist on saying Noowin, even to each other.</p>
+          </div>
+          <a href="https://drive.google.com/file/d/1kQyYvsbMe8rqRvN6yUqYpu18IGBlkHqu/view?usp=drive_link" class="read-more" target="_blank">Read more</a>
+        </div>
+        
+        <div class="writing-item">
+          <div class="writing-item-header">
+            <div class="writing-content">
+              <h4>Model Minorities: Are We Only Assets or Liabilities?</h4>
+            </div>
+          </div>
+          <div class="writing-excerpt">
+            <p>When people ask where I'm from, they don't expect an answer — they expect a performance. Everyone wants to hear a success story, and they move on; few want to actually know you. The "immigrant story" is an American invention, not an Asian invention. America fed the narrative first globally that this was the land of opportunities for migrants, while when we came, people expected immigrant gratitude and a simplified success story.</p>
+          </div>
+          <a href="https://drive.google.com/file/d/1JuMZ_9aZy4g-Lqnk16nIu17l38IRu75n/view?usp=drive_link" class="read-more" target="_blank">Read more</a>
+        </div>
+        
+        <div class="writing-item">
+          <div class="writing-item-header">
+            <div class="writing-content">
+              <h4>How California's New Yellow Bus Bill Will Affect Low-Income Students</h4>
+              <p class="award-note">Published in L.A. Times High School Insider</p>
+            </div>
+          </div>
+          <div class="writing-excerpt">
+            <p>California state Senator Nancy Skinner has recently introduced California Senate Bill 878, which would require schools to provide transportation for students from kindergarten to 6th grade that live over half a mile away from public schools, and middle and high school students living over a mile away from schools.</p>
+          </div>
+          <a href="https://highschool.latimes.com/news/how-californias-new-yellow-bus-bill-will-affect-students/" class="read-more" target="_blank">Read more</a>
         </div>
         
         <a href="./writing-portfolio.html" class="portfolio-link">View All Writing</a>
@@ -258,57 +358,41 @@
       <!-- Photography Column -->
       <div class="portfolio-column">
         <h3>Photography</h3>
-        <div class="column-description">
-          <p>My photography work captures moments, expressions, and spaces that tell compelling visual stories. From portraits to architectural studies, each image reflects my interest in light, composition, and emotional resonance.</p>
-        </div>
         
         <div class="portfolio-grid">
           <!-- Photography Item 1 -->
           <div class="portfolio-item">
-            <img src="./portfo/img2.jpg" alt="Sustainable Lighthouse">
-            <div class="portfolio-item-caption">
-              <h4>Sustainable Lighthouse</h4>
-            </div>
+            <img src="img1.jpg" alt="Photography 1" style="width:100%">
           </div>
           
           <!-- Photography Item 2 -->
           <div class="portfolio-item">
-            <img src="./portfo/img1.png" alt="Sister's Portrait">
-            <div class="portfolio-item-caption">
-              <h4>Sister's Portrait</h4>
-            </div>
+            <img src="img2.jpg" alt="Photography 2" style="width:100%">
           </div>
           
           <!-- Photography Item 3 -->
           <div class="portfolio-item">
-            <img src="./portfo/img3.png" alt="Churches">
-            <div class="portfolio-item-caption">
-              <h4>Churches</h4>
-            </div>
+            <img src="img3.jpg" alt="Photography 3" style="width:100%">
           </div>
           
           <!-- Photography Item 4 -->
           <div class="portfolio-item">
-            <img src="./portfo/img4.png" alt="Marble Statue">
-            <div class="portfolio-item-caption">
-              <h4>Marble Statue</h4>
-            </div>
+            <img src="img4.jpg" alt="Photography 4" style="width:100%">
           </div>
           
           <!-- Photography Item 5 -->
           <div class="portfolio-item">
-            <img src="./portfo/img5.png" alt="Julia's Portrait">
-            <div class="portfolio-item-caption">
-              <h4>Julia's Portrait</h4>
-            </div>
+            <img src="img5.jpg" alt="Photography 5" style="width:100%">
           </div>
           
           <!-- Photography Item 6 -->
           <div class="portfolio-item">
-            <img src="./portfo/img6.png" alt="IKEA Drawer">
-            <div class="portfolio-item-caption">
-              <h4>IKEA Drawer</h4>
-            </div>
+            <img src="img6.jpg" alt="Photography 6" style="width:100%">
+          </div>
+          
+          <!-- Photography Item 7 -->
+          <div class="portfolio-item">
+            <img src="img7.jpg" alt="Photography 7" style="width:100%">
           </div>
         </div>
         
