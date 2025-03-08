@@ -4,79 +4,317 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.jpg" />
   <title>Huong Nguyen</title>
   <meta name="description" content="Huong Nguyen">
   <meta name="keywords" content="Name, skills and coding experiences" />
-  <link rel="stylesheet" href="index.css" />
   <style>
-    .articles-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 20px;
     }
-    .article {
+    
+    /* Header Styles */
+    .header {
+      text-align: center;
+      padding: 40px 0;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .heading-primary {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    
+    /* Two-Column Layout */
+    .portfolio-container {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .portfolio-column {
+      flex: 1;
+    }
+    
+    /* Divider for mobile view */
+    .mobile-divider {
+      display: none;
+      height: 1px;
+      background-color: #ddd;
+      margin: 40px 0;
+    }
+    
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
       text-align: center;
     }
-    .article img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
+    
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eee;
     }
-    .article-title {
-      margin-top: 10px;
-      font-size: 18px;
+    
+    /* Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .portfolio-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .portfolio-item-caption {
+      padding: 12px;
+      background: #f9f9f9;
+    }
+    
+    .portfolio-item-caption h4 {
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+    
+    /* Writing Section */
+    .writing-item {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .writing-item:last-child {
+      border-bottom: none;
+    }
+    
+    .writing-item h4 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    
+    .writing-excerpt {
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    
+    .read-more {
+      display: inline-block;
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .read-more:hover {
+      text-decoration: underline;
+    }
+    
+    /* Column Descriptions */
+    .column-description {
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+    
+    /* Link Buttons */
+    .portfolio-link {
+      display: block;
+      text-align: center;
+      margin: 30px auto 10px;
+      padding: 12px 25px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
       font-weight: bold;
+      max-width: 200px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .portfolio-link:hover {
+      background-color: #555;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .portfolio-container {
+        flex-direction: column;
+      }
+      
+      .mobile-divider {
+        display: block;
+      }
+      
+      .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .heading-primary {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      h3 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header class="header" id="top">
-    <div class="header__text-box">
-      <h1 class="heading-primary">Huong Nguyen</h1>
+  <!-- Header -->
+  <header class="header" role="banner" id="top">
+    <div class="header__text">
+      <h1 class="heading-primary">
+        <span>Huong Nguyen</span>
+      </h1>
     </div>
   </header>
-
-  <section class="work" id="work">
-    <div class="row">
-      <h2>Portfolio</h2>
-      <div class="articles-container">
-        <div class="article">
-          <img src="./portfo/img2.jpg" alt="Sustainable Lighthouse">
-          <div class="article-title">Sustainable Lighthouse</div>
+  
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    
+    <div class="portfolio-container">
+      <!-- Writing Column -->
+      <div class="portfolio-column">
+        <h3>Writing</h3>
+        <div class="column-description">
+          <p>A collection of my written works exploring themes of culture, identity, and human experience. My writing spans various genres including creative non-fiction, short stories, and critical essays.</p>
         </div>
-        <div class="article">
-          <img src="./portfo/img1.png" alt="Sister's Portrait">
-          <div class="article-title">Sister's Portrait</div>
+        
+        <!-- Writing Items -->
+        <div class="writing-item">
+          <h4>The Silent Conversation</h4>
+          <div class="writing-excerpt">
+            <p>In the quiet moments between strangers, there exists an unspoken language—a dance of glances, postures, and microexpressions that communicate volumes without a single word exchanged...</p>
+          </div>
+          <a href="./writing/silent-conversation.html" class="read-more">Read more</a>
         </div>
-        <div class="article">
-          <img src="./portfo/img3.png" alt="Churches">
-          <div class="article-title">Churches</div>
+        
+        <div class="writing-item">
+          <h4>Echoes of Home</h4>
+          <div class="writing-excerpt">
+            <p>What defines the concept of home in an increasingly globalized world? This essay explores the threads that connect us to places, examining how memory and sensory experience create lasting impressions...</p>
+          </div>
+          <a href="./writing/echoes-home.html" class="read-more">Read more</a>
         </div>
-        <div class="article">
-          <img src="./portfo/img4.png" alt="Marble Statue of King Herod">
-          <div class="article-title">Marble Statue of King Herod</div>
+        
+        <div class="writing-item">
+          <h4>Between Worlds</h4>
+          <div class="writing-excerpt">
+            <p>A short story that follows the journey of Minh, a young Vietnamese-American navigating the complex intersection of cultural identities while searching for authentic connection...</p>
+          </div>
+          <a href="./writing/between-worlds.html" class="read-more">Read more</a>
         </div>
-        <div class="article">
-          <img src="./portfo/img5.png" alt="Julia's Portrait">
-          <div class="article-title">Julia's Portrait</div>
+        
+        <div class="writing-item">
+          <h4>The Architecture of Memory</h4>
+          <div class="writing-excerpt">
+            <p>This reflective piece explores how physical spaces become repositories of personal history, and how the structures we inhabit shape our understanding of ourselves...</p>
+          </div>
+          <a href="./writing/architecture-memory.html" class="read-more">Read more</a>
         </div>
-        <div class="article">
-          <img src="./portfo/img6.png" alt="IKEA Drawer">
-          <div class="article-title">IKEA Drawer</div>
+        
+        <a href="./writing-portfolio.html" class="portfolio-link">View All Writing</a>
+      </div>
+      
+      <!-- Mobile Divider -->
+      <div class="mobile-divider"></div>
+      
+      <!-- Photography Column -->
+      <div class="portfolio-column">
+        <h3>Photography</h3>
+        <div class="column-description">
+          <p>My photography work captures moments, expressions, and spaces that tell compelling visual stories. From portraits to architectural studies, each image reflects my interest in light, composition, and emotional resonance.</p>
         </div>
-        <div class="article">
-          <img src="./portfo/img7.png" alt="Self-Portrait">
-          <div class="article-title">Self-Portrait</div>
+        
+        <div class="portfolio-grid">
+          <!-- Photography Item 1 -->
+          <div class="portfolio-item">
+            <img src="./portfo/img2.jpg" alt="Sustainable Lighthouse">
+            <div class="portfolio-item-caption">
+              <h4>Sustainable Lighthouse</h4>
+            </div>
+          </div>
+          
+          <!-- Photography Item 2 -->
+          <div class="portfolio-item">
+            <img src="./portfo/img1.png" alt="Sister's Portrait">
+            <div class="portfolio-item-caption">
+              <h4>Sister's Portrait</h4>
+            </div>
+          </div>
+          
+          <!-- Photography Item 3 -->
+          <div class="portfolio-item">
+            <img src="./portfo/img3.png" alt="Churches">
+            <div class="portfolio-item-caption">
+              <h4>Churches</h4>
+            </div>
+          </div>
+          
+          <!-- Photography Item 4 -->
+          <div class="portfolio-item">
+            <img src="./portfo/img4.png" alt="Marble Statue">
+            <div class="portfolio-item-caption">
+              <h4>Marble Statue</h4>
+            </div>
+          </div>
+          
+          <!-- Photography Item 5 -->
+          <div class="portfolio-item">
+            <img src="./portfo/img5.png" alt="Julia's Portrait">
+            <div class="portfolio-item-caption">
+              <h4>Julia's Portrait</h4>
+            </div>
+          </div>
+          
+          <!-- Photography Item 6 -->
+          <div class="portfolio-item">
+            <img src="./portfo/img6.png" alt="IKEA Drawer">
+            <div class="portfolio-item-caption">
+              <h4>IKEA Drawer</h4>
+            </div>
+          </div>
         </div>
-        <div class="article">
-          <img src="./portfo/img8.png" alt="Quick Signs Study">
-          <div class="article-title">Quick Signs Study</div>
-        </div>
+        
+        <a href="./photography-portfolio.html" class="portfolio-link">View All Photography</a>
       </div>
     </div>
   </section>
 </body>
-
 </html>
