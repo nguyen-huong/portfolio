@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,6 +61,16 @@
     
     .portfolio-column:first-child {
       border-right: 1px solid #eee;
+    }
+    
+    /* Three-Column Layout for when we have 3 sections */
+    .three-column .portfolio-column {
+      flex: 1;
+      border-right: 1px solid #eee;
+    }
+    
+    .three-column .portfolio-column:last-child {
+      border-right: none;
     }
     
     /* Divider for mobile view */
@@ -133,7 +144,7 @@
       font-size: 1.1rem;
     }
     
-        .writing-item {
+    .writing-item {
       margin-bottom: 25px;
       padding-bottom: 25px;
       border-bottom: 1px solid #eee;
@@ -183,36 +194,54 @@
     
     .read-more {
       display: inline-block;
-      padding: 5px 15px;
-      background-color: #3498db;
-      color: white;
+      color: #0066cc;
       text-decoration: none;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      font-weight: 500;
       transition: all 0.3s ease;
     }
     
     .read-more:hover {
-      background-color: #2980b9;
-      transform: translateX(5px);
-    }
-    
-    
-    .read-more {
-      display: inline-block;
-      color: #0066cc;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    
-    .read-more:hover {
       text-decoration: underline;
+      color: #004499;
     }
     
     /* Column Descriptions */
     .column-description {
       margin-bottom: 30px;
       line-height: 1.8;
+    }
+    
+    /* PDF and Button Styles */
+    .pdf-container {
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .pdf-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+    
+    .more-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    .more-button:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
     }
     
     /* Link Buttons */
@@ -235,9 +264,29 @@
     }
     
     /* Responsive adjustments */
+    @media (max-width: 1100px) {
+      .portfolio-container.three-column {
+        flex-direction: column;
+      }
+      
+      .three-column .portfolio-column {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .three-column .portfolio-column:last-child {
+        border-bottom: none;
+      }
+    }
+    
     @media (max-width: 900px) {
       .portfolio-container {
         flex-direction: column;
+      }
+      
+      .portfolio-column:first-child {
+        border-right: none;
+        border-bottom: 1px solid #eee;
       }
       
       .mobile-divider {
@@ -246,6 +295,10 @@
       
       .portfolio-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+      
+      .pdf-container iframe {
+        height: 300px;
       }
     }
     
@@ -260,6 +313,10 @@
       
       h3 {
         font-size: 1.5rem;
+      }
+      
+      .pdf-container iframe {
+        height: 250px;
       }
     }
   </style>
@@ -279,7 +336,7 @@
   <section id="portfolio">
     <h2>Portfolio</h2>
     
-    <div class="portfolio-container">
+    <div class="portfolio-container three-column">
       <!-- Writing Column -->
       <div class="portfolio-column">
         <h3>Writing</h3>
@@ -298,12 +355,8 @@
         </div>
         
         <div class="writing-item">
-          <div class="writing-item-header">
-            <div class="writing-content">
-              <h4>Pouring Jazz & Little Saigon</h4>
-              <p class="award-note">Published in L.A. Times High School Insider</p>
-            </div>
-          </div>
+          <h4>Pouring Jazz & Little Saigon</h4>
+          <p class="award-note">Published in L.A. Times High School Insider</p>
           <div class="writing-excerpt">
             <p>My childhood sometimes feels like a blur. Partially because, when you're a kid, your memories collide into a haze, and partially because years of absorbing English makes the memory of me, an outspoken, eccentric Vietnamese child, seem the tiniest bit foreign. However, the one thing that always stuck out from my childhood in Vietnam is listening to musician Elvis Phuong.</p>
           </div>
@@ -311,11 +364,7 @@
         </div>
         
         <div class="writing-item">
-          <div class="writing-item-header">
-            <div class="writing-content">
-              <h4>Where the Bougainvillea Once Bloomed</h4>
-            </div>
-          </div>
+          <h4>Where the Bougainvillea Once Bloomed</h4>
           <div class="writing-excerpt">
             <p>Where the bougainvillea once bloomed, is where you will find me.<br>
 With wistful, young eyes upwards and chubby fingers turning white in tight grips,<br>
@@ -325,12 +374,8 @@ The petals waved hello as I climbed up the thin, metal swirls of the yard's fenc
         </div>
         
         <div class="writing-item">
-          <div class="writing-item-header">
-            <div class="writing-content">
-              <h4>Southeast Asian Beverages to Try This Spring Instead of Boba</h4>
-              <p class="award-note">Published in Baron News</p>
-            </div>
-          </div>
+          <h4>Southeast Asian Beverages to Try This Spring Instead of Boba</h4>
+          <p class="award-note">Published in Baron News</p>
           <div class="writing-excerpt">
             <p>On the numerous car rides in Orange County, I see empty Southeast Asian shops next to the crowded tea shops. What would it look like if we expanded our palates with drinks from other cultures, while supporting neglected small businesses?</p>
           </div>
@@ -338,11 +383,7 @@ The petals waved hello as I climbed up the thin, metal swirls of the yard's fenc
         </div>
         
         <div class="writing-item">
-          <div class="writing-item-header">
-            <div class="writing-content">
-              <h4>The Healing Minority</h4>
-            </div>
-          </div>
+          <h4>The Healing Minority</h4>
           <div class="writing-excerpt">
             <p>As I write down those familiar names on the top of a fresh sheet of homework, I stare at it.<br>
 Nguyen, in America. Nguyễn, in Vietnam.<br>
@@ -352,11 +393,7 @@ A name that was mispronounced and mistreated in North Carolina, and a name now t
         </div>
         
         <div class="writing-item">
-          <div class="writing-item-header">
-            <div class="writing-content">
-              <h4>Model Minorities: Are We Only Assets or Liabilities?</h4>
-            </div>
-          </div>
+          <h4>Model Minorities: Are We Only Assets or Liabilities?</h4>
           <div class="writing-excerpt">
             <p>When people ask where I'm from, they don't expect an answer — they expect a performance. Everyone wants to hear a success story, and they move on; few want to actually know you. The "immigrant story" is an American invention, not an Asian invention. America fed the narrative first globally that this was the land of opportunities for migrants, while when we came, people expected immigrant gratitude and a simplified success story.</p>
           </div>
@@ -364,23 +401,14 @@ A name that was mispronounced and mistreated in North Carolina, and a name now t
         </div>
         
         <div class="writing-item">
-          <div class="writing-item-header">
-            <div class="writing-content">
-              <h4>How California's New Yellow Bus Bill Will Affect Low-Income Students</h4>
-              <p class="award-note">Published in L.A. Times High School Insider</p>
-            </div>
-          </div>
+          <h4>How California's New Yellow Bus Bill Will Affect Low-Income Students</h4>
+          <p class="award-note">Published in L.A. Times High School Insider</p>
           <div class="writing-excerpt">
             <p>California state Senator Nancy Skinner has recently introduced California Senate Bill 878, which would require schools to provide transportation for students from kindergarten to 6th grade that live over half a mile away from public schools, and middle and high school students living over a mile away from schools.</p>
           </div>
           <a href="https://highschool.latimes.com/news/how-californias-new-yellow-bus-bill-will-affect-students/" class="read-more" target="_blank">Read more</a>
         </div>
-        
-
       </div>
-      
-      <!-- Mobile Divider -->
-      <div class="mobile-divider"></div>
       
       <!-- Photography Column -->
       <div class="portfolio-column">
@@ -437,21 +465,21 @@ A name that was mispronounced and mistreated in North Carolina, and a name now t
             <img src="/portfo/img10.jpg" alt="Photography 10" style="width:100%">
           </div>
         </div>
-        
       </div>
-        <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    
-    <div class="portfolio-container">
-      <!-- Writing Column -->
+      
+      <!-- Activism Column -->
       <div class="portfolio-column">
         <h3>Activism</h3>
         <div class="column-description">
           <p>A collection of my works where I promote Little Saigon.</p>
         </div>
-        <iframe src="./saigon.pdf" width="100%" height="600px" style="border: none;"></iframe>
-            <button onclick="window.location.href='https://photos.app.goo.gl/k8Rj6Z2FemeDasBo6'">More</button>
+        
+        <div class="pdf-container">
+          <iframe src="./saigon.pdf"></iframe>
+        </div>
+        
+        <button class="more-button" onclick="window.location.href='https://photos.app.goo.gl/k8Rj6Z2FemeDasBo6'">More</button>
+      </div>
     </div>
   </section>
 </body>
